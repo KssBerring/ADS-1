@@ -18,21 +18,15 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
 // вставьте код функции
-  if (n == 1) {
-        return 2;
+  uint64_t count = 0;
+  uint64_t num = 2;
+  while (count < n) {
+    if (checkPrime(num)) {
+        count++;
     }
-
-    uint64_t count = 1;
-    uint64_t num = 3;
-    while (count < n) {
-        if (checkPrime(num)) {
-            count++;
-        }
-        if (count == n) {
-            return num;
-        }
-        num += 2;
-    }
+    num++;
+}
+return num - 1;
 }
 
 uint64_t nextPrime(uint64_t value) {
